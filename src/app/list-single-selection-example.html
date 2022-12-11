@@ -1,0 +1,41 @@
+<mat-selection-list #datasources [multiple]="false">
+  <div mat-subheader><b>Datasources</b></div>
+  <mat-list-option *ngFor="let Datasource of typesOfDatasources" [value]="Datasource">
+    {{Datasource}}
+  </mat-list-option>
+</mat-selection-list>
+
+<p>
+  Option selected: {{datasources.selectedOptions.hasValue() ? datasources.selectedOptions.selected[0].value : 'None'}}
+</p>
+
+<div class="container mt-5">
+
+  <h2>Datasources info</h2>
+
+  <table class="table table-dark">
+    <thead class="thead-dark">
+        <tr>
+          <th style="width: 30%">Name</th>
+          <th style="width: 25%">Datakey</th>
+          <th style="width: 25%">Timestamp</th>
+          <th style="width: 10%">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let datainput of Datainputs">
+        <ng-container *ngIf="datainput.datasource.name=== datasources.selectedOptions.selected[0].value">
+          <tr *ngFor="let data of datainput.data">
+            <td>{{ datainput.datasource.name }}</td>
+            <td>{{ datainput.dataKey.name}}</td>
+            <td>{{ data[0] | date : 'medium' }}</td>
+            <td>{{ data[1] }}</td>
+          </tr>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+<!-- Copyright 2022 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->
