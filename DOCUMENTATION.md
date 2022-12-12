@@ -23,9 +23,9 @@ To change the datasource simply pick another one from the list.
 
 
 # Next steps
-This app was my first interaction with angular(not with Javascript/Typescript), i would have liked to implement some aspects of it in another way as i understand the way i did it is not the most efficient one. But i'm proud of the outcome for the time i had.
+This app was my first interaction with angular(not with Javascript/Typescript), i would have liked to implement some aspects of it in another way as i understand the way i did it is not the most efficient one.
 
-These are:    -Not have everything wrapped up in one component but use 2 for example and apply binding(Get the selected item from the list(parent) as input to the table(child)).
-              -Populate the list options by reading the datasources directly from the files.
-              -Use a dropdown list(select) to choose the datasource.
+These are:    -Not have everything wrapped up in one component but instead use 2 and apply binding(Get the selected item from the list(parent) as input to the table(child)).
+              -Populate the list options by reading the datasources directly from the files. I think this item would have been the direct next step should i've had more time, as i'd already read both files in the app.
+              -Use a dropdown list(select) to choose the datasource, so the UI feels cleaner.
               -Stylize the table.
